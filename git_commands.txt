@@ -1,0 +1,45 @@
+PS C:\Users\Lasya Priya\Desktop\peer_to_peer_learning-1> git add .
+
+
+PS C:\Users\Lasya Priya\Desktop\peer_to_peer_learning-1> git commit -m "login signup file"
+
+
+[main 009ad88] login signup file
+ 17 files changed, 449 insertions(+), 4889 deletions(-)
+ create mode 100644 .vscode/settings.json
+ create mode 100644 Login SignUp/index.html
+ create mode 100644 Login SignUp/script.js
+ create mode 100644 Login SignUp/style.css
+ delete mode 100644 frontend/.gitignore
+ delete mode 100644 frontend/README.md
+ delete mode 100644 frontend/eslint.config.js
+ delete mode 100644 frontend/index.html
+ delete mode 100644 frontend/package-lock.json
+ delete mode 100644 frontend/package.json
+ delete mode 100644 frontend/public/vite.svg
+ delete mode 100644 frontend/src/App.css
+ delete mode 100644 frontend/src/App.jsx
+ delete mode 100644 frontend/src/assets/react.svg
+ delete mode 100644 frontend/src/index.css
+ delete mode 100644 frontend/src/main.jsx
+ delete mode 100644 frontend/vite.config.js
+
+
+
+PS C:\Users\Lasya Priya\Desktop\peer_to_peer_learning-1> git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 2.79 KiB | 89.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/ImLasya/peer_to_peer_learning.git
+   667c1ef..009ad88  main -> main
+
+
+
+   
+PS C:\Users\Lasya Priya\Desktop\peer_to_peer_learning-1> git pull origin main
+From https://github.com/ImLasya/peer_to_peer_learning
+ * branch            main       -> FETCH_HEAD
+Already up to date.

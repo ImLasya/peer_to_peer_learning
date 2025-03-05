@@ -72,8 +72,8 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
+  border: 1px solid #1e40af;
+  background-color: #1e40af;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -115,9 +115,9 @@ export const OverlayContainer = styled.div<SignInProps>`
 `;
 
 export const Overlay = styled.div<SignInProps>`
-  background: #ff416c;
-  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background: #1e40af;
+  background: -webkit-linear-gradient(to right, #1e40af, #3b82f6);
+  background: linear-gradient(to right, #1e40af, #3b82f6);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;

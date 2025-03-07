@@ -8,30 +8,69 @@ function ResourceCard({ icon: Icon, title, description, links }: {
   links: Array<{ name: string; url: string }>;
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      <div className="flex items-center gap-3 mb-4">
-        <Icon className="w-6 h-6 text-indigo-600" />
-        <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
+//     <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+//       <div className="flex items-center gap-3 mb-4">
+//         <Icon className="w-6 h-6 text-indigo-600" />
+//         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
+//       </div>
+//       <p className="text-gray-600 mb-4">{description}</p>
+//       <ul className="space-y-2">
+//         {links.map((link, index) => (
+//           <li key={index}>
+//             <a
+//               href={link.url}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="text-indigo-600 hover:text-indigo-800 hover:underline flex items-center gap-2"
+//             >
+//               → {link.name}
+//             </a>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+<div className="flip-card min-h-[340px]"> {/* Increased min-height */}
+      <div className="flip-card-inner">
+        {/* Front Side */}
+        <div className="flip-card-front bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 shadow-md hover:shadow-lg">
+          <div className="flex flex-col items-center justify-center h-full text-center">
+            <div className="bg-indigo-100/80 text-indigo-600 p-4 rounded-2xl mb-6">
+              <Icon className="w-8 h-8" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-800 px-4">{title}</h2>
+          </div>
+        </div>
+
+        {/* Back Side */}
+        <div className="flip-card-back bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl p-8 shadow-md text-white">
+          <div className="flex flex-col h-full">
+            <div className="bg-white/10 p-4 rounded-2xl mb-6 w-fit mx-auto">
+              <Icon className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-center px-2">{title}</h3>
+            <p className="text-gray-100/90 text-center mb-6 line-clamp-3">{description}</p>
+            <ul className="space-y-3 mt-auto">
+              {links.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-100 hover:text-white hover:underline flex items-center gap-2 transition-colors text-sm"
+                  >
+                    → <span className="truncate">{link.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <ul className="space-y-2">
-        {links.map((link, index) => (
-          <li key={index}>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-600 hover:text-indigo-800 hover:underline flex items-center gap-2"
-            >
-              → {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
-
 function App() {
   const resources = [
     {
@@ -126,6 +165,52 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+     <style>
+        {`
+          .flip-card {
+            perspective: 1000px;
+            min-height: 340px; /* Match the min-height with component */
+          }
+          
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+          }
+          
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+          
+          .flip-card-front,
+          .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            padding: 2rem; /* Consistent padding */
+            box-sizing: border-box;
+          }
+
+          .flip-card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+          }
+
+          .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        `}
+      </style>
+
+
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Learning Resources</h1>

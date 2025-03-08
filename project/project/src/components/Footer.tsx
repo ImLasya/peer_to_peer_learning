@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+// import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -13,20 +13,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Connecting students with successful graduates for better career guidance and placement opportunities.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-            </div>
+           
           </div>
           
           {/* Quick Links */}
@@ -57,7 +44,7 @@ const Footer = () => {
           </div>
           
           {/* Resources */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
@@ -81,7 +68,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
           
           {/* Contact */}
           <div>

@@ -11,6 +11,42 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
+      <style>
+        {`
+          .flip-card {
+            perspective: 1000px;
+            min-height: 300px;
+          }
+          
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+          }
+          
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+          
+          .flip-card-front,
+          .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+          }
+          
+          .flip-card-back {
+            transform: rotateY(180deg);
+          }
+        `}
+      </style>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20"></div>
@@ -51,60 +87,71 @@ const LandingPage = () => {
           
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             {/* Feature 1 */}
-            <div className={`card p-6 ${isLoaded ? 'animate-slideInBottom stagger-1' : 'opacity-0'}`}>
-              <div className="bg-blue-100 text-blue-600 p-3 rounded-full w-fit mb-4">
-                <GraduationCap size={24} />
+            <div className={`flip-card ${isLoaded ? 'animate-slideInBottom stagger-1' : 'opacity-0'}`}>
+              <div className="flip-card-inner bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flip-card-front flex justify-center items-center text-center">
+                  <div className="bg-blue-100 text-blue-600 p-3 rounded-full mb-4">
+                    <GraduationCap size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold">Learn from Seniors</h3>
+                </div>
+                <div className="flip-card-back flex justify-center items-center text-center">
+                  <div className="bg-blue-100 text-blue-600 p-3 rounded-full mb-4">
+                    <GraduationCap size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Learn from Seniors</h3>
+                  <p className="text-gray-600">
+                    Get direct insights from seniors who have successfully navigated the placement process and secured positions in top companies.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Learn from Seniors</h3>
-              <p className="text-gray-600">
-                Get direct insights from seniors who have successfully navigated the placement process and secured positions in top companies.
-              </p>
             </div>
-            
+
             {/* Feature 2 */}
-            <div className={`card p-6 ${isLoaded ? 'animate-slideInBottom stagger-2' : 'opacity-0'}`}>
-              <div className="bg-orange-100 text-orange-600 p-3 rounded-full w-fit mb-4">
-                <Users size={24} />
+            <div className={`flip-card ${isLoaded ? 'animate-slideInBottom stagger-2' : 'opacity-0'}`}>
+              <div className="flip-card-inner bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flip-card-front flex justify-center items-center text-center">
+                  <div className="bg-orange-100 text-orange-600 p-3 rounded-full mb-4">
+                    <Users size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold">Build Connections</h3>
+                </div>
+                <div className="flip-card-back flex justify-center items-center text-center">
+                  <div className="bg-orange-100 text-orange-600 p-3 rounded-full mb-4">
+                    <Users size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Build Connections</h3>
+                  <p className="text-gray-600">
+                    Connect with alumni and build a professional network that can help you throughout your career journey.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Build Connections</h3>
-              <p className="text-gray-600">
-                Connect with alumni and build a professional network that can help you throughout your career journey.
-              </p>
             </div>
-            
+
             {/* Feature 3 */}
-            <div className={`card p-6 ${isLoaded ? 'animate-slideInBottom stagger-3' : 'opacity-0'}`}>
-              <div className="bg-green-100 text-green-600 p-3 rounded-full w-fit mb-4">
-                <Briefcase size={24} />
+            <div className={`flip-card ${isLoaded ? 'animate-slideInBottom stagger-3' : 'opacity-0'}`}>
+              <div className="flip-card-inner bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flip-card-front flex justify-center items-center text-center">
+                  <div className="bg-green-100 text-green-600 p-3 rounded-full mb-4">
+                    <Briefcase size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold">Placement Insights</h3>
+                </div>
+                <div className="flip-card-back flex justify-center items-center text-center">
+                  <div className="bg-green-100 text-green-600 p-3 rounded-full mb-4">
+                    <Briefcase size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Placement Insights</h3>
+                  <p className="text-gray-600">
+                    Access detailed information about placement processes, interview experiences, and preparation strategies.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Placement Insights</h3>
-              <p className="text-gray-600">
-                Access detailed information about placement processes, interview experiences, and preparation strategies.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section bg-gray-50">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className={`text-center ${isLoaded ? 'animate-fadeIn stagger-1' : 'opacity-0'}`}>
-              <p className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">500+</p>
-              <p className="text-lg text-gray-600">Successful Placements</p>
-            </div>
-            <div className={`text-center ${isLoaded ? 'animate-fadeIn stagger-2' : 'opacity-0'}`}>
-              <p className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">50+</p>
-              <p className="text-lg text-gray-600">Partner Companies</p>
-            </div>
-            <div className={`text-center ${isLoaded ? 'animate-fadeIn stagger-3' : 'opacity-0'}`}>
-              <p className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">1000+</p>
-              <p className="text-lg text-gray-600">Active Students</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section bg-gradient-to-r from-blue-600 to-blue-800 text-white">

@@ -38,8 +38,8 @@
 // }
 
 // export default AppWrapper;
-
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { SettingsProvider } from './context/SettingsContext'; // Add this import
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/login_form/Loginpage';
 import HomePage from './pages/HomePage';
@@ -49,6 +49,7 @@ import CompaniesPage from './pages/CompaniesPage';
 import SeniorsPage from './pages/SeniorsPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Settings from './pages/Settings';
 import './index.css';
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/companies" element={<CompaniesPage />} />
         <Route path="/seniors" element={<SeniorsPage />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 
@@ -79,7 +81,9 @@ function App() {
 function AppWrapper() {
   return (
     <Router>
-      <App />
+      <SettingsProvider> {/* Wrap with SettingsProvider */}
+        <App />
+      </SettingsProvider>
     </Router>
   );
 }

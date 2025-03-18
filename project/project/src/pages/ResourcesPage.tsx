@@ -1,3 +1,78 @@
+// import React from 'react';
+// import { BookOpen, Code2, FileText, GraduationCap, Video, Map, Briefcase, Brain } from 'lucide-react';
+
+// function ResourceCard({ icon: Icon, title, description, links }: {
+//   icon: React.ElementType;
+//   title: string;
+//   description: string;
+//   links: Array<{ name: string; url: string }>;
+// }) {
+//   return (
+// //     <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+// //       <div className="flex items-center gap-3 mb-4">
+// //         <Icon className="w-6 h-6 text-indigo-600" />
+// //         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
+// //       </div>
+// //       <p className="text-gray-600 mb-4">{description}</p>
+// //       <ul className="space-y-2">
+// //         {links.map((link, index) => (
+// //           <li key={index}>
+// //             <a
+// //               href={link.url}
+// //               target="_blank"
+// //               rel="noopener noreferrer"
+// //               className="text-indigo-600 hover:text-indigo-800 hover:underline flex items-center gap-2"
+// //             >
+// //               → {link.name}
+// //             </a>
+// //           </li>
+// //         ))}
+// //       </ul>
+// //     </div>
+// //   );
+// // }
+// <div className="flip-card min-h-[340px]"> {/* Increased min-height */}
+//       <div className="flip-card-inner">
+//         {/* Front Side */}
+//         <div className="flip-card-front bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 shadow-md hover:shadow-lg">
+//           <div className="flex flex-col items-center justify-center h-full text-center">
+//             <div className="bg-indigo-100/80 text-indigo-600 p-4 rounded-2xl mb-6">
+//               <Icon className="w-8 h-8" />
+//             </div>
+//             <h2 className="text-2xl font-bold text-gray-800 px-4">{title}</h2>
+//           </div>
+//         </div>
+
+//         {/* Back Side */}
+//         <div className="flip-card-back bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl p-8 shadow-md text-white">
+//           <div className="flex flex-col h-full">
+//             <div className="bg-white/10 p-4 rounded-2xl mb-6 w-fit mx-auto">
+//               <Icon className="w-8 h-8" />
+//             </div>
+//             <h3 className="text-xl font-bold mb-4 text-center px-2">{title}</h3>
+//             <p className="text-gray-100/90 text-center mb-6 line-clamp-3">{description}</p>
+//             <ul className="space-y-3 mt-auto">
+//               {links.map((link, index) => (
+//                 <li key={index}>
+//                   <a
+//                     href={link.url}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="text-indigo-100 hover:text-white hover:underline flex items-center gap-2 transition-colors text-sm"
+//                   >
+//                     → <span className="truncate">{link.name}</span>
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
 import React from 'react';
 import { BookOpen, Code2, FileText, GraduationCap, Video, Map, Briefcase, Brain } from 'lucide-react';
 
@@ -8,69 +83,78 @@ function ResourceCard({ icon: Icon, title, description, links }: {
   links: Array<{ name: string; url: string }>;
 }) {
   return (
-//     <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-//       <div className="flex items-center gap-3 mb-4">
-//         <Icon className="w-6 h-6 text-indigo-600" />
-//         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
-//       </div>
-//       <p className="text-gray-600 mb-4">{description}</p>
-//       <ul className="space-y-2">
-//         {links.map((link, index) => (
-//           <li key={index}>
-//             <a
-//               href={link.url}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="text-indigo-600 hover:text-indigo-800 hover:underline flex items-center gap-2"
-//             >
-//               → {link.name}
-//             </a>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-<div className="flip-card min-h-[340px]"> {/* Increased min-height */}
+    <div className="flip-card min-h-[340px] w-full">
       <div className="flip-card-inner">
-        {/* Front Side */}
-        <div className="flip-card-front bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 shadow-md hover:shadow-lg">
-          <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="bg-indigo-100/80 text-indigo-600 p-4 rounded-2xl mb-6">
-              <Icon className="w-8 h-8" />
+        {/* Front Side - NFT Style */}
+        <div className="flip-card-front bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all">
+          <div className="flex flex-col items-center justify-center h-full space-y-4">
+            <div className="bg-cyan-400/10 p-4 rounded-full mb-4">
+              <Icon className="w-8 h-8 text-cyan-400" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 px-4">{title}</h2>
+            <h2 className="text-2xl font-bold text-white text-center px-4">{title}</h2>
+            <p className="text-gray-400 text-center text-sm line-clamp-3">{description}</p>
+            <div className="w-full pt-4 mt-auto">
+              <hr className="border-gray-700 mb-4" />
+              <div className="flex justify-between items-center text-sm">
+                <div className="flex items-center gap-2 text-cyan-400">
+                  <span className="text-lg">◘</span>
+                  <p className="text-gray-300">Resources</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg text-cyan-400">◷</span>
+                  <p className="text-gray-300">{links.length} links</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Back Side */}
-        <div className="flip-card-back bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl p-8 shadow-md text-white">
+        {/* Back Side - Links */}
+        <div className="flip-card-back bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 shadow-xl text-white">
           <div className="flex flex-col h-full">
-            <div className="bg-white/10 p-4 rounded-2xl mb-6 w-fit mx-auto">
-              <Icon className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-bold mb-4 text-center px-2">{title}</h3>
-            <p className="text-gray-100/90 text-center mb-6 line-clamp-3">{description}</p>
-            <ul className="space-y-3 mt-auto">
+            <h3 className="text-xl font-bold mb-4 text-center">{title}</h3>
+            <ul className="space-y-3 flex-1">
               {links.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-indigo-100 hover:text-white hover:underline flex items-center gap-2 transition-colors text-sm"
+                    className="group flex items-center justify-between p-3 rounded-lg bg-gray-800 hover:bg-cyan-400/10 transition-all"
                   >
-                    → <span className="truncate">{link.name}</span>
+                    <span className="text-gray-400 group-hover:text-cyan-400 truncate">
+                      {link.name}
+                    </span>
+                    <span className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                      →
+                    </span>
                   </a>
                 </li>
               ))}
             </ul>
+            <div className="pt-4 mt-auto">
+              <hr className="border-gray-700 mb-3" />
+              <div className="flex items-center gap-3 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <span className="text-cyan-400">ⓘ</span>
+                  <p>Verified Resources</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+// Keep the App component and style block the same as in your original code
+
+
+
+
+
+
 function App() {
   const resources = [
     {
@@ -227,3 +311,4 @@ function App() {
 }
 
 export default App;
+

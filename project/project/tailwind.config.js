@@ -77,6 +77,10 @@ module.exports = {
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif']
+      },
+      
+      backdropBlur: {
+        'lg': '20px',
       }
     },
   },

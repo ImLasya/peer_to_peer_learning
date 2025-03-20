@@ -160,3 +160,43 @@ body {
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 255, 255, 0.3);
 }
+/* Add to your global CSS */
+.slick-slide {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-card {
+  transition: all 0.3s ease-out;
+}
+
+.company-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap'); */
+/* 
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+} */
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+.cyber-panel-sm {
+  @apply border-2 border-neon-cyan/20 rounded-lg backdrop-blur-sm;
+}
+
+.cyber-button-small {
+  @apply border-2 border-neon-magenta text-neon-magenta rounded-md hover:border-neon-cyan transition-colors;
+}
+
+.glass-panel {
+  @apply bg-cyber-deep/50 backdrop-blur-lg border border-neon-cyan/20;
+}
